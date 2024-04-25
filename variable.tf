@@ -1,4 +1,4 @@
-variable "rname" {
+variable "rg_name" {
   description = "resourcegroup name"
   type = string
   default = "rg"
@@ -18,28 +18,28 @@ variable "location" {
     type = string
     default = "uksouth"
 }
-variable "winvm_name" {
+variable "win_vm_name" {
     description = "windows vm name"
     type = string
     default = "infra-winvm"
 }
-variable "winvm_username"{
+variable "win_vm_username"{
     description = "windows username"
     type = string
     default = "adminuser"
 }
-variable "winvm_password"{
+variable "win_vm_password"{
     description = "windows password"
     type = string
     default = "P@$$w0rd1234!"
 }
-variable "felxibleserver_name"{
-    description = "Mysql felxibleserver"
+variable "flexible_server_name"{
+    description = "Mysql flexibleserver"
     type = string
-    default = "infra-felxibleserver"
+    default = "infra-flexibleserver"
 }
-variable "felxibleserver_db"{
-    description = "Mysql felxibleserverdb"
+variable "flexible_server_db"{
+    description = "Mysql flexibleserverdb"
     type = string
-    default = "infra-felxibledb"
+    default = "infra-flexibledb"
 }
