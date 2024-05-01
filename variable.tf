@@ -43,3 +43,4 @@ variable "flexible_server_db"{
     type = string
     default = "infra-flexibledb"
 }
+
