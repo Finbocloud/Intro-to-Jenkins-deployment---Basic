@@ -6,7 +6,7 @@ resource "azurerm_windows_virtual_machine" "this_rg_winvm" {
   admin_username      = var.win_vm_username
   admin_password      = var.win_vm_password
   network_interface_ids = [
-    azurerm_network_interface.example.id,
+    azurerm_network_interface.this_nic.id,
   ]
 
   os_disk {
