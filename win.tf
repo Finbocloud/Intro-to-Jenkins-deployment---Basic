@@ -1,5 +1,5 @@
 resource "azurerm_windows_virtual_machine" "this_rg_winvm" {
-  name                = var.win_vm_name
+  name                = "${local.owner}-${local.environment}-${var.win_vm_name}"
   resource_group_name = azurerm_resource_group.this_rg.name
   location            = azurerm_resource_group.this_rg.location
   size                = "Standard_F2"
