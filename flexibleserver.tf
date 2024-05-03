@@ -2,8 +2,8 @@ resource "azurerm_mysql_flexible_server" "this_rg_flexibleserver" {
   name                   = "${local.owner}-${local.environment}-${var.flexible_server_name}"
   resource_group_name    = azurerm_resource_group.this_rg.name
   location               = azurerm_resource_group.this_rg.location
-  administrator_login    = "mysqladminun"
-  administrator_password = "H@Sh1CoR3!"
+  administrator_login    = var.mysql_admin_login
+  administrator_password = var.mysql_admin_pword
   sku_name               = "B_Standard_B1s"
   zone = 1
 }

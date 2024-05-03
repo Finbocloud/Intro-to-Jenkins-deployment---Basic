@@ -69,9 +69,29 @@ variable "ip_config" {
   default     = "ip-config"
 }
 variable "database_network_security_rule_name" {
-  description = "network security group rule"
+  description = "db network security group rule"
   type        = string
-  default     = "infra-nsg-rule"
+  default     = "db-nsg-rule"
+}
+variable "vm_network_security_rule_name" {
+  description = "vm network security group rule"
+  type        = string
+  default     = "vm-nsg-rule"
+}
+variable "vm_nsg_name" {
+  description = "vm security group name"
+  type        = string
+  default     = "vm-nsg"
+}
+variable "mysql_admin_login" {
+  description = "flexibleserver admin login"
+  type        = string
+  default     = "mysqladminun"
+}
+variable "mysql_admin_pword" {
+  description = "flexibleserver admin password"
+  type        = string
+  default     = "H@Sh1CoR3!"
 }
 
 
