@@ -45,6 +45,6 @@ resource "azurerm_network_interface" "this_db_nic" {
     name                          = "ip_config-db"
     subnet_id                     = azurerm_subnet.this_db_subnet.id
     private_ip_address_allocation = "Dynamic"
-  
+
   }
 }
