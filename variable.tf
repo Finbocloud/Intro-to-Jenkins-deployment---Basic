@@ -21,7 +21,7 @@ variable "location" {
 variable "win_vm_name" {
   description = "windows vm name"
   type        = string
-  default     = "infra-winvm"
+  default     = "winvm"
 }
 variable "win_vm_username" {
   description = "windows username"
@@ -72,6 +72,11 @@ variable "database_network_security_rule_name" {
   description = "db network security group rule"
   type        = string
   default     = "db-nsg-rule"
+}
+variable "db_nsg_name" {
+  description = "db security group name"
+  type        = string
+  default     = "db-nsg"
 }
 variable "vm_network_security_rule_name" {
   description = "vm network security group rule"
