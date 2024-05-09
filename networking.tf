@@ -14,14 +14,14 @@ resource "azurerm_subnet" "this_subnet" {
   address_prefixes     = ["10.0.2.0/24"]
 }
 
-resource "azurerm_network_interface" "this_nic" {
-  name                = "${local.owner}-${local.environment}-${var.nic}"
+resource "azurerm_network_interface" "this_vm_nic" {
+  name                = "${local.owner}-${local.environment}-${var.nic}-vm"
   location            = azurerm_resource_group.this_rg.location
   resource_group_name = azurerm_resource_group.this_rg.name
 
   ip_configuration {
-    name                          = var.ip_config
-    subnet_id                     = azurerm_subnet.this_subnet.id
+    name                          = "ip_config-vm"
+    subnet_id                     = azurerm_subnet.this_vm_subnet.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.this_publicip.id
   }
@@ -34,4 +34,17 @@ resource "azurerm_public_ip" "this_publicip" {
   allocation_method   = "Static"
 
   tags = local.tags
+}
+
+resource "azurerm_network_interface" "this_db_nic" {
+  name                = "${local.owner}-${local.environment}-${var.nic}-db"
+  location            = azurerm_resource_group.this_rg.location
+  resource_group_name = azurerm_resource_group.this_rg.name
+
+  ip_configuration {
+    name                          = "ip_config-db"
+    subnet_id                     = azurerm_subnet.this_db_subnet.id
+    private_ip_address_allocation = "Dynamic"
+  
+  }
 }
